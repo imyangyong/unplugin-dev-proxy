@@ -6,7 +6,7 @@
 
 # Features
 
-- transform response data to typescript declare file.
+- [x] transform response data to typescript declare file.
 - [] mock data.
 - [] identity auth.
 
@@ -19,7 +19,7 @@ npm i unplugin-dev-proxy -D
 
 ## usage
 
-### Feature1: transform response json data to TypeScript type
+### Feature 1: transform response json data to TypeScript type
 
 #### `app.tsx`
 ```tsx
