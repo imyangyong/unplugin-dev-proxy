@@ -2,40 +2,78 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-dev-proxy?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-dev-proxy)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+🛰 A plugin that enhance dev proxy with response data to ts, mock data, identity auth, etc.
 
-## Template Usage
+# Features
 
-To use this template, clone it down using:
+- transform response data to typescript declare file.
+- [] mock data.
+- [] identity auth.
 
+# Quick Start
+
+## install
 ```bash
-npx degit imyangyong/unplugin-dev-proxy my-unplugin
+npm i unplugin-dev-proxy -D
 ```
 
-And do a global replace of `unplugin-dev-proxy` with your plugin name.
+## usage
 
-Then you can start developing your unplugin 🔥
+### Feature1: transform response json data to TypeScript type
 
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
-
-## Install
-
-```bash
-npm i unplugin-dev-proxy
+#### `app.tsx`
+```tsx
+axios.get('/api/search?keywords=MELANCHOLY')
 ```
+for example, if the backend return as below
+
+```json
+{
+  "data": 1
+}
+```
+
+it will create `@types/GET_Search.d.ts` as below
+```ts
+declare interface GETSearchResponseType {
+  data: number
+}
+```
+
+#### File naming rule
+ `${options.rootDir}/${req.Method}_${pathname(req.url)}`
+
+what is `pathname` function? for example
+
+```ts
+pathname('/api/search?keywords=hello') === 'ApiSearch'
+```
+#### Type naming rule
+
+the rule of type name is `${req.Method}${pathname(req.url)}${options.suffix}`
+
+## Config
 
 <details>
 <summary>Vite</summary><br>
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-dev-proxy/vite'
+import DevProxy from 'unplugin-dev-proxy/vite'
+
+const r = (p: string) => resolve(__dirname, p)
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
-  ],
+    DevProxy({
+      '/api': {
+        target: 'https://autumnfish.cn',
+        json2ts: {
+          rootDir: r('@types'),
+        }
+      }
+    }),
+  ]
 })
 ```
 
@@ -48,11 +86,11 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-dev-proxy/rollup'
+import DevProxy from 'unplugin-dev-proxy/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+    DevProxy({ /* options */ }),
   ],
 }
 ```
@@ -113,10 +151,10 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-dev-proxy/esbuild'
+import DevProxy from 'unplugin-dev-proxy/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins: [DevProxy()],
 })
 ```
 
