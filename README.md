@@ -52,6 +52,10 @@ pathname('/api/search?keywords=hello') === 'ApiSearch'
 
 the rule of type name is `${req.Method}${pathname(req.url)}${options.suffix}`
 
+## Options
+
+[options](https://github.com/imyangyong/unplugin-dev-proxy/blob/main/src/types.ts)
+
 ## Config
 
 <details>
