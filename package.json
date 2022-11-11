@@ -1,7 +1,7 @@
 {
   "name": "unplugin-dev-proxy",
   "type": "module",
-  "version": "0.0.0-beta.0",
+  "version": "0.0.0",
   "packageManager": "pnpm@7.15.0",
   "description": "🛰 Dev proxy enhanced with response data to ts, mock data, identity auth, etc.",
   "license": "MIT",
