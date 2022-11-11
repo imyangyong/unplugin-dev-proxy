@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.15.0",
-  "description": "🛰 Dev proxy enhanced with response json data to ts, mock data, identity auth, etc.",
+  "description": "🛰 Dev proxy enhanced with transform response json data to ts, mock data, identity auth, etc.",
   "license": "MIT",
   "homepage": "https://github.com/imyangyong/unplugin-dev-proxy#readme",
   "repository": {

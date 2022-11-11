@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-dev-proxy?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-dev-proxy)
 
-🛰 A plugin that enhance dev proxy with response data to ts, mock data, identity auth, etc.
+🛰 A plugin that enhance dev proxy with transform response json data to ts, mock data, identity auth, etc.
 
 # Features
 
