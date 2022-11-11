@@ -7,8 +7,8 @@
 # Features
 
 - [x] transform response data to typescript declare file.
-- [] mock data.
-- [] identity auth.
+- [ ] mock data.
+- [ ] identity auth.
 
 # Quick Start
 
