@@ -1,7 +1,7 @@
 {
   "name": "unplugin-dev-proxy",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@7.15.0",
   "description": "🛰 Dev proxy enhanced with transform response json data to ts, mock data, identity auth, etc.",
   "license": "MIT",
@@ -84,6 +84,7 @@
   },
   "dependencies": {
     "@imyangyong/utils": "^0.0.4",
+    "change-case": "^4.1.2",
     "http-proxy": "^1.18.1",
     "json-to-ts": "^1.7.0",
     "magic-string": "^0.26.7",
