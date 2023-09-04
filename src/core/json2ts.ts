@@ -2,13 +2,14 @@ import * as fs from 'fs'
 import type { IncomingMessage } from 'http'
 import JsonToTS from 'json-to-ts'
 import MagicString from 'magic-string'
+import { pascalCase } from 'change-case'
 import { toArray } from '@imyangyong/utils'
 import parse from 'url-parse'
 import type { Json2TsOptions } from '../types'
 
 function parseUrl(req: IncomingMessage) {
   const parsedUrl = parse(req.url!).pathname.split('/').map(name => `${(name[0] || '').toUpperCase()}${name.slice(1)}`).join('')
-  return `${req.method!.toString().toUpperCase()}_${parsedUrl}.d.ts`
+  return `${req.method!.toString().toUpperCase()}_${pascalCase(parsedUrl)}.d.ts`
 }
 
 function isIgnore(req: IncomingMessage, ignore: Json2TsOptions['ignore']) {
