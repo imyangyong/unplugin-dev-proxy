@@ -1,7 +1,7 @@
 {
   "name": "unplugin-dev-proxy",
   "type": "module",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "packageManager": "pnpm@8.12.1",
   "description": "🛰 Dev proxy enhanced with transform response json data to ts, mock data, identity auth, etc. Currently only vite is supported",
   "license": "MIT",
