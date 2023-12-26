@@ -2,8 +2,8 @@
   "name": "unplugin-dev-proxy",
   "type": "module",
   "version": "0.0.2",
-  "packageManager": "pnpm@7.15.0",
-  "description": "🛰 Dev proxy enhanced with transform response json data to ts, mock data, identity auth, etc.",
+  "packageManager": "pnpm@8.12.1",
+  "description": "🛰 Dev proxy enhanced with transform response json data to ts, mock data, identity auth, etc. Currently only vite is supported",
   "license": "MIT",
   "homepage": "https://github.com/imyangyong/unplugin-dev-proxy#readme",
   "repository": {
@@ -16,7 +16,6 @@
   "keywords": [
     "unplugin",
     "vite",
-    "webpack",
     "json-to-ts"
   ],
   "exports": {
@@ -83,31 +82,31 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@imyangyong/utils": "^0.0.4",
-    "change-case": "^4.1.2",
+    "@imyangyong/utils": "^0.4.1",
+    "change-case": "^5.3.0",
     "http-proxy": "^1.18.1",
     "json-to-ts": "^1.7.0",
-    "magic-string": "^0.26.7",
-    "unplugin": "^0.9.6",
+    "magic-string": "^0.30.5",
+    "unplugin": "^1.5.1",
     "url-parse": "^1.5.10"
   },
   "devDependencies": {
-    "@imyangyong/eslint-config": "^0.4.4",
-    "@types/http-proxy": "^1.17.9",
-    "@types/node": "^18.8.0",
-    "@types/url-parse": "^1.4.8",
-    "bumpp": "^8.2.1",
-    "chalk": "^5.0.1",
-    "eslint": "^8.24.0",
-    "esno": "^0.16.3",
-    "fast-glob": "^3.2.12",
-    "nodemon": "^2.0.20",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.79.1",
-    "tsup": "^6.2.3",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4",
-    "vitest": "^0.23.4",
-    "webpack": "^5.74.0"
+    "@imyangyong/eslint-config": "^1.4.0",
+    "@types/http-proxy": "^1.17.14",
+    "@types/node": "^20.10.5",
+    "@types/url-parse": "^1.4.11",
+    "bumpp": "^9.2.1",
+    "chalk": "^5.3.0",
+    "eslint": "^8.56.0",
+    "esno": "^4.0.0",
+    "fast-glob": "^3.3.2",
+    "nodemon": "^3.0.2",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.1.0",
+    "webpack": "^5.89.0"
   }
 }

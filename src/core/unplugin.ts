@@ -1,4 +1,4 @@
-import events from 'events'
+import events from 'node:events'
 import { createUnplugin } from 'unplugin'
 import type { Options } from '../types'
 import { proxyWeb } from './proxy'
@@ -12,12 +12,10 @@ export default createUnplugin<Options | undefined>((options) => {
       configureServer(server) {
         ee.setMaxListeners(0)
         if (options) {
-          return () => {
-            for (const [route, option] of Object.entries(options.proxy)) {
-              server.middlewares.use(route, (req, res) => {
-                proxyWeb(req, res, option)
-              })
-            }
+          for (const [route, option] of Object.entries(options.proxy)) {
+            server.middlewares.use(route, (req, res) => {
+              proxyWeb(req, res, option)
+            })
           }
         }
       },
